@@ -1,3 +1,9 @@
+:root {
+  --primary-dark: #0B0D17;
+  --primary-light: #D0D6F9;
+  --simple-white: #FFFFFF;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -6,7 +12,8 @@
 
 html,
 body {
-  min-height: 100vh;
+  height: 100vh;
+  color: var(--primary-light);
 }
 
 a {
