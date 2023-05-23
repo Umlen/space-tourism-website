@@ -2,6 +2,9 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { mobileMenuToggler } from '@/redux/store/mobileMenuSlice';
+
 import header from '@/style/header.module.scss';
 import logoImg from 'public/assets/shared/logo.svg';
 
@@ -10,7 +13,8 @@ import MainMenu from '../navigation/MainMenu';
 
 const Header:React.FC = () => {
   const [isMobile, setIsMobile] = useState(true);
-  const [isMobielMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const isMobielMenuOpen = useAppSelector(state => state.mobileMenu.isOpen);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     function resize() {
@@ -28,10 +32,6 @@ const Header:React.FC = () => {
     return (() => window.removeEventListener('resize', resize));
   }, []);
 
-  function mobileMenuToggler() {
-    setIsMobileMenuOpen(prevMobileMenuState => !prevMobileMenuState);
-  }
-
   return (
     <header className={header.container}>
       <Image src={logoImg} alt='website logo' className={header.logo} />
@@ -40,7 +40,7 @@ const Header:React.FC = () => {
         isMobile ?
           <Image 
             src='/assets/shared/icon-hamburger.svg' 
-            onClick={mobileMenuToggler}
+            onClick={() => dispatch(mobileMenuToggler())}
             alt='' 
             width={24} 
             height={21}
@@ -48,7 +48,7 @@ const Header:React.FC = () => {
         :
           <MainMenu />
       }
-      {isMobielMenuOpen && <MobileMenu mobileMenuToggler={mobileMenuToggler} />}
+      {isMobielMenuOpen && <MobileMenu />}
     </header>
   );
 };
