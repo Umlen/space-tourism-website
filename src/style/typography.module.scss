@@ -1,3 +1,45 @@
 .boldText {
   font-weight: 700;
 }
+
+.uppercaseText {
+  text-transform: uppercase;
+}
+
+.largeHeader {
+  font-family: var(--font-bellefair);
+  font-weight: 400;
+  font-size: 5rem;
+  color: var(--simple-white);
+
+  @media (min-width: 700px) {
+    font-size: 9.375rem;
+  }
+}
+
+.navText {
+  letter-spacing: 2.7px;
+
+  @media (min-width: 700px) {
+    font-size: 1.25rem;
+    letter-spacing: 3.38px;
+  }
+  @media (min-width: 1280px) {
+    font-size: 1.75rem;
+    letter-spacing: 4.72px;
+  }
+}
+
+.paragraph {
+  font-size: .9375rem;
+  line-height: 1.66em;
+
+  @media (min-width: 700px) {
+    font-size: 1rem;
+    line-height: 1.75em;
+  }
+  @media (min-width: 1280px) {
+    font-size: 1.125rem;
+    line-height: 1.77em;
+  }
+}

@@ -14,6 +14,8 @@ html,
 body {
   height: 100vh;
   color: var(--primary-light);
+  display: flex;
+  flex-direction: column;
 }
 
 a {

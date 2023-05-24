@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 24px;
+  flex-shrink: 0;
 
   @media (min-width: 700px) {
     padding: 0 0 0 40px;
@@ -96,6 +97,7 @@
   @media (min-width: 700px) and (max-width: 1023px) {
     font-size: 1.14rem;
     letter-spacing: 2.36px;
+    
     & span {
       display: none; /*remove link's numbers for tablets*/
     }
