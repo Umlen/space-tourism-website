@@ -1,9 +1,10 @@
 'use client'
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import Image from 'next/image';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { mobileMenuToggler } from '@/redux/store/mobileMenuSlice';
+import { setScreenSize } from '@/redux/store/screenSizeSlice';
 
 import header from '@/style/header.module.scss';
 import logoImg from 'public/assets/shared/logo.svg';
@@ -12,23 +13,15 @@ import MobileMenu from '../navigation/MobileMenu';
 import MainMenu from '../navigation/MainMenu';
 
 const Header:React.FC = () => {
-  const [isMobile, setIsMobile] = useState(true);
+  const isMobile = useAppSelector(state => state.screenSize.isMobile);
   const isMobielMenuOpen = useAppSelector(state => state.mobileMenu.isOpen);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    function resize() {
-      const mobileBreakPoint = 700;
-      if (window.innerWidth > mobileBreakPoint) {
-        setIsMobile(false);
-      } else {
-        setIsMobile(true);
-      }
-    }
+    const resize = () => dispatch(setScreenSize(window.innerWidth));
 
     resize();
     window.addEventListener('resize', resize);
-
     return (() => window.removeEventListener('resize', resize));
   }, []);
 

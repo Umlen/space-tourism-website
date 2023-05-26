@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-interface mobileMenuState {
+type mobileMenuState = {
   isOpen: boolean;
 }
 
