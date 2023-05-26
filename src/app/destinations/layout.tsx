@@ -6,17 +6,14 @@ function LayoutDestinations({children}: {children:React.ReactNode}) {
 
   return (  
     <div>
-      <div>
-        <Link href='/'>Home</Link>
-        {
-          destinationsArr.map((destination, key) => 
-            <Link key={key} href={`/destinations/${destination.name.toLocaleLowerCase()}`}>
-              {destination.name}
-            </Link>
-          )
-        }
-      </div>
-      {children}
+      {
+        destinationsArr.map((destination, key) => 
+          <Link key={key} href={`/destinations/${destination.name.toLocaleLowerCase()}`}>
+            {destination.name}
+          </Link>
+        )
+      }
+    {children}
     </div>
   );
 }

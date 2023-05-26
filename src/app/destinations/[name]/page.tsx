@@ -1,3 +1,5 @@
+import typography from '@/style/typography.module.scss';
+
 type DestinationProps = {
   params: {
     name: string;
@@ -7,7 +9,9 @@ type DestinationProps = {
 function Destination ({params: {name}}: DestinationProps) {
   return (
     <div>
-      <h1>{name}</h1>
+      <h1 className={`${typography.bigHeader} ${typography.uppercaseText}`}>
+        {name}
+      </h1>
     </div>
   );
 }

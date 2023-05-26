@@ -2,7 +2,7 @@ import Link from 'next/link';
 import home from '@/style/home.module.scss';
 import typography from '@/style/typography.module.scss';
 
-const Home: React.FC = () => {
+function Home() {
   return (
     <section className={home.flexContainer}>
       <div className={home.textWrapper}>
