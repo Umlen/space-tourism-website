@@ -1,17 +1,25 @@
+import destinations from '@/data/destinations.json';
 import typography from '@/style/typography.module.scss';
+import { submenuLinks } from '@/types/types';
 
-type DestinationProps = {
-  params: {
-    name: string;
-  };
-};
+import PageSubmenu from '@/components/navigation/PageSubmenu';
 
-function Destination ({params: {name}}: DestinationProps) {
+function Destination () {
+  const destinationsArr = destinations.destinations;
+  const destinationLinks: submenuLinks = destinationsArr.map(destination => {
+    return {
+      href: `/destinations/${destination.name.toLocaleLowerCase()}`,
+      text: destination.name,
+      class: ''
+    };
+  });
+
   return (
     <div>
       <h1 className={`${typography.bigHeader} ${typography.uppercaseText}`}>
-        {name}
+        {destinationsArr[0].name}
       </h1>
+      <PageSubmenu linksArr={destinationLinks} />
     </div>
   );
 }
