@@ -10,7 +10,6 @@
   margin: 0;
 }
 
-html,
 body {
   height: 100vh;
   color: var(--primary-light);

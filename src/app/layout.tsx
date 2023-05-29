@@ -5,6 +5,7 @@ import '@/style/globals.css';
 import home from '@/style/home.module.scss';
 
 import Providers from '@/redux/provider';
+import BgImage from '@/components/layout/BgImage';
 import Header from '@/components/layout/Header';
 
 const bellefair = Bellefair({ weight: '400', subsets: ['latin'], variable: '--font-bellefair' });
@@ -19,7 +20,8 @@ export default function RootLayout({children,}: {children: React.ReactNode}) {
   return (
     <Providers>
       <html lang="en">
-        <body className={`${bellefair.variable} ${barlowCondensed.className} ${home.homeBg}`}>
+        <body className={`${bellefair.variable} ${barlowCondensed.className}`}>
+          <BgImage />
           <Header />
           <main className={home.flexGrow}>
             {children}
