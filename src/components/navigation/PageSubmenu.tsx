@@ -1,20 +1,31 @@
-import Link from 'next/link';
-import { submenuLinks } from '@/types/types';
+'use client'
 
-type submenuProps = {
-  linksArr: submenuLinks;
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
+
+import { SubmenuLinks } from '@/types/types';
+
+type SubmenuProps = {
+  linksArr: SubmenuLinks;
+  wrapperClass: string;
 };
 
-const PageSubmenu:React.FC<submenuProps> = ({ linksArr }) => { 
+const PageSubmenu:React.FC<SubmenuProps> = ({ linksArr, wrapperClass }) => { 
+  const pathname = usePathname();
+
   return (
-    <div>
+    <div className={wrapperClass}>
       {
         linksArr.map((link, key) => {
           return (
-            <Link key={key} href={link.href}>
+            <Link 
+              key={key} 
+              href={link.href} 
+              className={pathname === link.href ? `${link.linksClass} ${link.linksActiveClass}` : link.linksClass}
+            >
               {link.text}
             </Link>
-          )
+          );
         })
       }
     </div>

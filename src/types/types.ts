@@ -1,5 +1,6 @@
-export type submenuLinks = {
+export type SubmenuLinks = {
   href: string;
   text: string;
-  class: string;
+  linksClass: string;
+  linksActiveClass: string;
 }[];

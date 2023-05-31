@@ -6,9 +6,9 @@ import { useState, useEffect } from 'react';
 import backgroundImg from '@/style/backgroundImg.module.scss';
 
 const BgImage:React.FC = () => {
-  const [currentPage, setCurrentPage] = useState('home');
   const pathname = usePathname();
-
+  const [currentPage, setCurrentPage] = useState('');
+  
   useEffect(() => {
     if (pathname === '/') {
       setCurrentPage('home');

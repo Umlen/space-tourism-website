@@ -1,0 +1,123 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 0 24px 32px;
+
+  @media (min-width: 700px) {
+    justify-content: space-evenly;
+    text-align: left;
+    padding: 0 39px 62px;
+  }
+  @media (min-width: 1280px) {
+    padding: 0 165px 110px;
+    justify-content: space-between;
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  width: 170px;
+  height: 170px;
+  margin: 60px auto 53px;
+
+  @media (min-width: 700px) {
+    width: 300px;
+    height: 300px;
+  }
+  @media (min-width: 1280px) {
+    width: 445px;
+    height: 445px;
+    margin: 0;
+  }
+}
+
+.image {
+  object-fit: contain;
+}
+
+.flexContainer {
+  @media (min-width: 1280px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 155px;
+  }
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: 700px) {
+    text-align: center;
+    padding: 0 59px;
+  }
+  @media (min-width: 1280px) {
+    max-width: 445px;
+    align-items: start;
+    text-align: left;
+    padding: 0;
+  }
+}
+
+.navLinksWrapper {
+  display: flex;
+  gap: 35px;
+  margin-bottom: 20px;
+
+  @media (min-width: 700px) {
+    margin-bottom: 32px;
+  }
+}
+
+.navLinks {
+  color: var(--primary-light);
+  font-size: .875rem;
+  letter-spacing: 2.36px;
+  padding-bottom: 12px;
+  border-bottom: 3px solid transparent;
+
+  &:hover {
+    border-bottom: 3px solid rgba(var(--simple-white-rgb), .5);
+  }
+
+  @media (min-width: 700px) {
+    font-size: 1rem;
+    letter-spacing: 2.7px;
+  }
+}
+
+.navLinksActive {
+  color: var(--simple-white);
+  border-bottom: 3px solid var(--simple-white);
+}
+
+.description {
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(var(--primary-light-rgb), .25);
+  margin-bottom: 32px;
+
+  @media (min-width: 700px) {
+    padding-bottom: 50px;
+  }
+}
+
+.infoWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  @media (min-width: 700px) {
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+  }
+}
+
+.infoTitle {
+  margin-bottom: 12px;
+}

@@ -2,6 +2,9 @@
   --primary-dark: #0B0D17;
   --primary-light: #D0D6F9;
   --simple-white: #FFFFFF;
+
+  --primary-light-rgb: 208, 214, 249;
+  --simple-white-rgb: 255, 255, 255;
 }
 
 * {
